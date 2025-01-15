@@ -7,7 +7,8 @@ fs.readFile("./pages/index.html", (err, data) => {
   if (err != null) {
     console.log(err);
   }
-  console.log(data);
+  //console.log(data);
+  parsed_html = data;
   console.log("index.html read correctly");
 });
 
@@ -15,7 +16,7 @@ const server = http.createServer((req, resp) => {
   if (req.method == "GET") {
     console.log("receiving GET request");
     resp.writeHead(200, { "Content-Type": "text/html" });
-    resp.write("./pages/index.html");
+    resp.write(parsed_html);
   }
 });
 server.listen(8080);
