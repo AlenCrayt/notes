@@ -10,9 +10,9 @@ const server = http.createServer((req, resp) => {
       }
       //console.log(data);
       console.log("index.html read correctly");
+      resp.writeHead(200, { "Content-Type": "text/html" });
+      resp.end(data);
     });
-    resp.writeHead(200, { "Content-Type": "text/html" });
-    resp.end(data);
   }
 });
 server.listen(8080);
