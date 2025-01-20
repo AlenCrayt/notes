@@ -3,11 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../output.css" rel="stylesheet" />
     <title>Notes Web App</title>
   </head>
-  <body>
-    <h1>Notes</h1>
-    <h2>Username</h2>
-    <h3>Log In</h3>
+  <body class="flex justify-center items-center mt-56">
+    <article
+      class="flex flex-col justify-center items-center bg-blue-300 w-64 rounded-xl"
+    >
+      <h1 class="text-2xl m-2">Notes</h1>
+      <h3>Username</h3>
+      <input type="text" class="mb-2 rounded-xl" />
+      <h3>Password</h3>
+      <input type="text" class="mb-2 rounded-xl" />
+      <button class="bg-cyan-200 m-1 p-2 rounded-xl">Log In</button>
+    </article>
   </body>
 </html>
