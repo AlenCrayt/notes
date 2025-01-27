@@ -5,6 +5,13 @@ const fs = require("fs");
 const server = http.createServer((req, resp) => {
   if (req.url == "/") {
     fs.readFile("./pages/index.html", (err, data) => {
+      if (req.url == "/output.css") {
+        fs.readFile("./pages/output.css", (err, data) => {
+          console.log("Sending CSS stylesheet");
+          resp.writeHead(200, { "Content-Type": "text/css" });
+          resp.end(data);
+        });
+      }
       if (err) {
         console.log(err);
         resp.writeHead(500, { "Content-Type": "text/plain" });
